@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Usuários</h1>
+        <button id="addUser" onclick="showAddForm()">
+            <i class="material-icons">add_circle</i>
+            <span>Adicionar Usuário</span>
+        </button>
+    </header>
+    <table id="usersTable">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Idade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <div class="overlay" id="add-form-overlay">
+        <div class="form-container">
+            <h2>Adicionar Usuário</h2>
+            <label for="name">Nome</label>
+            <input type="text" id="add-name" name="name">
+            <label for="email">Email</label>
+            <input type="email" id="add-email" name="email">
+            <label for="age">Idade</label>
+            <input type="number" id="add-age" name="age">
+            <button onclick="addUser()">Adicionar</button>
+            <button id="close-btn" onclick="hideAddForm()">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="edit-form-overlay">
+        <div class="form-container">
+            <h2>Editar Usuário</h2>
+            <label for="name">Nome</label>
+            <input type="text" id="edit-name" name="name">
+            <label for="email">Email</label>
+            <input type="email" id="edit-email" name="email">
+            <label for="age">Idade</label>
+            <input type="number" id="edit-age" name="age">
+            <button onclick="editUser(this.value)" id="edit-user-btn">Salvar</button>
+            <button id="close-btn" onclick="hideEditForm()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        window.addEventListener("load", fillTable)
+    </script>
+</body>
+</html>
